@@ -14,6 +14,5 @@ def about():
     return jsonify({'about': 'about me info here'})
 
 
-
 if __name__ == '__main__':
   app.run(port=5000)

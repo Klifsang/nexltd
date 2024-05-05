@@ -20,4 +20,3 @@ COPY vercel.json /vercel.json
 
 # Start the Tile38 server and the application
 CMD ["./tile38-server"] # Start Tile38 server
-CMD ["vercel", "dev"]   # Start Vercel application

@@ -28,14 +28,11 @@ ENV FLASK_APP=index.py
 WORKDIR /app
 
 # Copy the application files
-COPY index.py /app/index.py
-COPY client /app
+COPY * /app
 
 # Install Flask
-RUN pip install Flask
+RUN pip install -r requirements.txt
 
-# Expose the Flask port
-EXPOSE 5000
 
 # Command to run the Flask application
-CMD ["flask", "run", "--host", "0.0.0.0"]
+CMD ["flask", "run"]

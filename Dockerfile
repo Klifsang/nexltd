@@ -15,5 +15,12 @@ WORKDIR /tile38-1.32.2-linux-amd64
 # Expose the default Tile38 port
 EXPOSE 9851
 
-# Run the Tile38 server
-CMD ["./tile38-server"]
+# Copy the vercel.json file to the working directory
+COPY vercel.json /vercel.json
+
+# Install dependencies for Vercel
+RUN pip install vercel-cli
+
+# Start the Tile38 server and the application
+CMD ["./tile38-server"] # Start Tile38 server
+CMD ["vercel", "dev"]   # Start Vercel application

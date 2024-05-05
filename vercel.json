@@ -15,13 +15,4 @@
   "env": {
     "FLASK_ENV": "production",
     "FLASK_APP": "index.py"
-  },
-  "postinstall": {
-    "commands": [
-      "curl -L https://github.com/tidwall/tile38/releases/download/1.32.2/tile38-1.32.2-linux-amd64.tar.gz -o tile38-1.32.2-linux-amd64.tar.gz",
-      "tar xzvf tile38-1.32.2-linux-amd64.tar.gz",
-      "cd tile38-1.32.2-linux-amd64",
-      "./tile38-server"
-    ]
   }
-}

@@ -20,3 +20,22 @@ COPY vercel.json /vercel.json
 
 # Start the Tile38 server and the application
 CMD ["./tile38-server"] # Start Tile38 server
+# Set environment variables
+ENV FLASK_ENV=production
+ENV FLASK_APP=index.py
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the application files
+COPY index.py /app/index.py
+COPY client /app
+
+# Install Flask
+RUN pip install Flask
+
+# Expose the Flask port
+EXPOSE 5000
+
+# Command to run the Flask application
+CMD ["flask", "run", "--host", "0.0.0.0"]
